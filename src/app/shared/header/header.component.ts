@@ -21,10 +21,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
  
   ngAfterViewInit(): void {
-    //NOTA: esta funcion esta en el archivo "custom.js"
-    $(".search-box a, .search-box .app-search .srh-btn").on('click', function () {
-      $(".app-search").toggle(200);
-    });
+
   }
  
   buscar(termino: string) {

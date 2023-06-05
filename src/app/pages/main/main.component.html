@@ -1,19 +1,20 @@
 <div>
     <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
-    <div class="overlay">
+    <div class="overlay" *ngIf="cardShown">
 
 
 
 
-        <div class="container">
+        <div class="container" >
             <div class="card card0">
                 <div class="border">
                     <h2>Martin Siles</h2>
-                    <button class="card-button">Let's go</button>
+                    <button class="card-button" (click)="disableCard()">Let's go</button>
                     <div class="icons">
                         <a href="https://www.youtube.com/channel/UCAE-h6LasCo18dJymGM5eKg"><i class="fa-brands fa-youtube" style="color: #ffffff;"></i></a>
                         <a href="https://www.instagram.com/siles99/"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></a>
                         <a href="https://www.linkedin.com/in/martinsilesreche588bba177/"><i class="fa-brands fa-linkedin" style="color: #ffffff;"></i></a>
+                        <a href="https://github.com/Martinsr99"><i class="fa-brands fa-github" style="color: #ffffff;"></i></a>
                     </div>
                 </div>
             </div>

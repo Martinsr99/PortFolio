@@ -10,6 +10,11 @@
   padding:50px 0;
   color:#f0f9ff;
   background-color:#282d32;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  bottom: 0;
+
 }
 
 .footer-dark h3 {
@@ -106,27 +111,8 @@
   flex: 1;
 }
 
-header {
-  position: relative;
-  background-color: black;
-  width: 100%;
-  overflow: hidden;
-}
 
-header video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
+
 
 .container {
   height: 100vh;
@@ -222,38 +208,23 @@ h2 {
   height: 100%;
   width: 100%;
   background-color: black;
-  opacity: 0.7;
-  z-index: 1;
+  opacity: 0.8;
+  z-index: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Media Query for devices withi coarse pointers and no hover functionality */
-
-/* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
-
-@media (pointer: coarse) and (hover: none) {
-  header {
-    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
-  }
-
-  header video {
-    display: none;
-  }
-}
-
-/*
-*
-* ==========================================
-* CUSTOM UTIL CLASSES
-* ==========================================
-*
-*/
-
 .video {
-  min-height: 700px;
-}
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -999;
+  display: flex;
+  justify-content: center;
+  align-items: center;}
 
 .dropdown-menu {
   background: none;
