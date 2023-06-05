@@ -8,13 +8,19 @@ import { Component } from '@angular/core';
 export class MainComponent {
 
   public cardShown:boolean = true;
-  public overlay = document.getElementById('overlay')
 
   disableCard() {
     this.cardShown=false
-    console.log(this.overlay)
+    this.resizeDiv()
 
   }
+  resizeDiv() {
+    const videoElement = document.getElementById('video');
+    if (videoElement) {
+      videoElement.style.transform = 'scale(0.5)';
+    }
+  }
+  
 
   
 
