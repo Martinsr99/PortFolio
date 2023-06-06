@@ -18,6 +18,7 @@ export class MainComponent {
     const videoElement = document.getElementById('video');
     if (videoElement) {
       videoElement.style.transform = 'scale(0.5)';
+      videoElement.style.zIndex = '999'
     }
   }
   
