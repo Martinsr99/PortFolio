@@ -6,18 +6,22 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { PagesComponent } from './pages/pages.component';
 import { MainComponent } from './pages/main/main.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     PagesComponent,
-    MainComponent
+    MainComponent,
+    ContactComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

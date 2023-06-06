@@ -291,3 +291,13 @@ code {
   display: flex;
   margin-top: 50px;
 }
+
+.text-card {
+  color: white;
+  font-size: 24px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
