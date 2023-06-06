@@ -1,8 +1,9 @@
 <div>
-    <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+    <!--It creates the transparent black overlay over the video -->
     <div class="overlay" *ngIf="cardShown">
 
 
+        
 
 
         <div class="container" >
@@ -19,16 +20,23 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
+
+    <div class="text" *ngIf="!cardShown">
+        <a href="https://www.youtube.com/channel/UCAE-h6LasCo18dJymGM5eKg"><i class="fa-brands fa-youtube" style="color: #ffffff;">YouTube</i></a>
+    </div>
+
     <!-- The HTML5 video element that will create the background video on the header -->
 
             
-            <iframe class="video" id="video" src="https://www.youtube.com/embed/y6MNk25ANMM?autoplay=1&mute=1"
+    <div class="container">
+        <div class="video-wrapper">
+          <iframe class="video" id="video" src="https://www.youtube.com/embed/y6MNk25ANMM?autoplay=1&mute=1"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
+        </div>
+      </div>
+      
 
 </div>

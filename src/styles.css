@@ -19,7 +19,8 @@
   width: 100%;
   overflow: hidden;
   bottom: 0;
-
+  text-align:center;
+  align-items: center;
 }
 
 .footer-dark h3 {
@@ -71,6 +72,8 @@
 
 .footer-dark .item.social {
   text-align:center;
+  margin-top:20px;
+
 }
 
 @media (max-width:991px) {
@@ -254,9 +257,7 @@ h2 {
 */
 
 body {
-  background: #eaafc8;
-  background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);
-  background: linear-gradient(to right, #eaafc8, #654ea3);
+  background: url("./assets/back.png");
   min-height: 100vh;
 }
 
@@ -278,4 +279,15 @@ code {
 
 .nav-item.dropdown.megamenu.show .dropdown-menu {
   display: block;
+}
+
+.text {
+  color: white;
+  font-size: 36px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  margin-top: 50px;
 }
