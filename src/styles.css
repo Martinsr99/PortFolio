@@ -300,3 +300,39 @@ code {
   width: 100%;
   display: flex;
 }
+
+.contact-button {
+  margin-top: 20px;
+  align-items: center;
+  display: flex;
+justify-content: center;
+margin-bottom: 20px;
+}
+
+.contact-card .contact-button {
+  display: flex;
+  justify-content: center;
+}
+.contact-input {
+  margin: 5px;
+}
+
+.contact-card {
+
+  background: #808080;
+  border-radius: 10px;
+  transition: background 0.8s;
+  overflow: hidden;
+  background: #1b1919;
+  box-shadow: 0 70px 63px -60px #894747;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.body-field {
+  height: 200px;
+  margin: 5px;
+
+}

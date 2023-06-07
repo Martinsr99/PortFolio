@@ -1,35 +1,31 @@
 <div class="row">
-    <div class="col-lg-12">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="text-card">Any questions or suggestions? Write to me!</h4>
-                <form class="form p-t-20" [formGroup]="contactForm" (submit)="onSubmit(contactForm)">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-addon"><i class="ti-user"></i></div>
-                            <input type="text" class="form-control" id="exampleInputuname"
-                                placeholder="Nombre del usuario" formControlName='name'>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-addon"><i class="ti-email"></i></div>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"
-                                formControlName="email">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-addon"><i class="ti-email"></i></div>
-                            <textarea class="form-control body-field" id="message" placeholder="Message"
-                            formControlName="body"></textarea>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-success btn-block waves-effect waves-light m-r-10"
-                       ><i class="fa fa-save"></i>Guardar cambios</button>
-                </form>
+    <div class="contact-card">
+      <div class="card-body">
+        <h4 class="text-card">Any questions or suggestions? <br> Write to me!</h4>
+        <form class="form p-t-20" [formGroup]="contactForm" (submit)="onSubmit(contactForm)">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon"><i class="ti-user"></i></div>
+              <input type="text" class="form-control contact-input" id="exampleInputuname" placeholder="Nombre del usuario" formControlName='name'>
             </div>
-        </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon"><i class="ti-email"></i></div>
+              <input type="email" class="form-control contact-input " id="exampleInputEmail1" placeholder="Email" formControlName="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon"><i class="ti-email"></i></div>
+              <textarea class="form-control body-field" id="message" placeholder="Message" formControlName="body"></textarea>
+            </div>
+          </div>
+          <div class="contact-button">
+            <button type="submit" class="btn btn-success btn-block waves-effect waves-light m-r-10">Enviar</button>
+          </div>
+        </form>
+      </div>
     </div>
-</div>
-
+  </div>
+  
