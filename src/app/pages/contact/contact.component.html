@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="text-card">Any questions or suggestions? Write to me!</h4>
-                <form class="form p-t-20" [formGroup]="contactForm" (submit)="actualizarPerfil()">
+                <form class="form p-t-20" [formGroup]="contactForm" (submit)="onSubmit(contactForm)">
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon"><i class="ti-user"></i></div>

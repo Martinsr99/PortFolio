@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ContactService } from 'src/app/services/contact.service';
 
 import Swal from 'sweetalert2';
 @Component({
@@ -14,7 +15,7 @@ export class ContactComponent implements OnInit {
 
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder, private contactService: ContactService
   ) {}
 
   ngOnInit(): void {
@@ -25,8 +26,10 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  actualizarPerfil() {
-    console.log('first')
+  onSubmit(contactForm) {
+    this.contactService.SendEmail(contactForm).subscribe(resp => {
+      console.log(resp)
+    })
   }
 
 }

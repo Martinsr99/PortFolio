@@ -8,4 +8,11 @@ import { map } from 'rxjs';
 export class ContactService {
   constructor(private http: HttpClient) {}
 
+  SendEmail(input: any) {
+    return this.http.post('http://localhost:3000/api/contact',{
+      email:input.value.email,
+      name: input.value.name,
+      body: input.value.body
+    })
+  }
 }
