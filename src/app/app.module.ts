@@ -10,13 +10,15 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactService } from './services/contact.service';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PagesComponent,
     MainComponent,
-    ContactComponent
+    ContactComponent,
+    AboutComponent
 
   ],
   imports: [
