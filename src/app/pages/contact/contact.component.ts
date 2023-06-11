@@ -39,8 +39,11 @@ export class ContactComponent implements OnInit {
     if (bodyControl.invalid) {
       Swal.fire('Error','Body is invalid','error')
     }
-    this.contactService.SendEmail(contactForm).subscribe((resp) => {
-      console.log(resp);
-    });
+    if(this.contactForm.valid){
+
+      this.contactService.SendEmail(contactForm).subscribe((resp) => {
+        console.log(resp);
+      });
+    }
   }
 }
