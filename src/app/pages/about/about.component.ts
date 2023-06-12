@@ -42,7 +42,9 @@ export class AboutComponent {
 
   downloadCV() {
     // Logic to download the CV
-    console.log('Download CV clicked');
-    // You can create a download link or perform a file download using a server API
+    const link = document.createElement('a');
+    link.href = '../../../assets/MartinSiles_SoftwareEngineer-1.pdf';
+    link.download = 'MartinSiles_SoftwareEngineer-1.pdf';
+    link.click();
   }
 }
