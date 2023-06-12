@@ -1,11 +1,12 @@
 <div class="card CV-card" *ngIf="!pdfShown; else pdfViewer">
-</div>
-<div class="card-footer">
-  <div class="button-container">
-    <button class="btn btn-primary" [disabled]="pdfLoaded" (click)="viewCV()" style="margin-right: 10px;">View CV</button>
-    <button class="btn btn-primary" (click)="downloadCV()">Download CV</button>
+  <div class="card-footer">
+    <div class="button-container">
+      <button class="btn" [disabled]="pdfLoaded" (click)="viewCV()">View CV</button>
+      <button class="btn" (click)="downloadCV()">Download CV</button>
+    </div>
   </div>
 </div>
+
   
 <ng-template #pdfViewer>
   <div class="pdf-container">
