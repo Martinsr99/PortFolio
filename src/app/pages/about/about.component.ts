@@ -11,7 +11,7 @@ export class AboutComponent {
 
   viewCV() {
     this.pdfShown = true;
-    this.pdfLoaded = false; // Set initial value
+    this.pdfLoaded = true; // Set initial value
     pdfjsLib.GlobalWorkerOptions.workerSrc =
       '../../../assets/pdfjs/pdf.worker.js';
     const pdfUrl = '../../../assets/MartinSiles_SoftwareEngineer-1.pdf';
@@ -42,9 +42,9 @@ export class AboutComponent {
 
   downloadCV() {
     // Logic to download the CV
-    const link = document.createElement('a');
-    link.href = '../../../assets/MartinSiles_SoftwareEngineer-1.pdf';
-    link.download = 'MartinSiles_SoftwareEngineer-1.pdf';
-    link.click();
+  const link = document.createElement('a');
+  link.href = '../../../assets/MartinSiles_SoftwareEngineer-1.pdf';
+  link.download = 'MartinSiles_SoftwareEngineer-1.pdf';
+  link.click();
   }
 }

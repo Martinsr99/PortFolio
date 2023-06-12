@@ -1,25 +1,17 @@
-<div class="card" *ngIf="!pdfShown; else pdfViewer">
-    <div class="card-header">
-      <h5 class="card-title">User Information</h5>
-    </div>
-    <div class="card-body">
-      <p>Name: John Doe</p>
-      <p>Email: johndoe@example.com</p>
-      <p>Phone: 123-456-7890</p>
-    </div>
-    <div class="card-footer">
-      <button class="btn btn-primary" (click)="viewCV()">View CV</button>
-      <button class="btn btn-primary" (click)="downloadCV()">Download CV</button>
-    </div>
+<div class="card CV-card" *ngIf="!pdfShown; else pdfViewer">
+</div>
+<div class="card-footer">
+  <div class="button-container">
+    <button class="btn btn-primary" [disabled]="pdfLoaded" (click)="viewCV()" style="margin-right: 10px;">View CV</button>
+    <button class="btn btn-primary" (click)="downloadCV()">Download CV</button>
   </div>
+</div>
   
-  <ng-template #pdfViewer>
-    <div class="pdf-container">
-        <button class="close-button" (click)="closeCV()">
-          <i class="material-icons">close</i>
-        </button>
-        <canvas id="pdfCanvas" class="CV fade-in"></canvas>
-      </div>
-      
-  </ng-template>
-  
+<ng-template #pdfViewer>
+  <div class="pdf-container">
+    <button class="close-button" (click)="closeCV()">
+      <i class="material-icons">close</i>
+    </button>
+    <canvas id="pdfCanvas" class="CV fade-in"></canvas>
+  </div>   
+</ng-template>
