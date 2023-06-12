@@ -6,10 +6,12 @@ import * as pdfjsLib from 'pdfjs-dist';
 })
 export class AboutComponent {
   public pdfShown: boolean = false;
+    public pdfLoaded: boolean = false;
   private canvas: HTMLCanvasElement;
 
   viewCV() {
     this.pdfShown = true;
+    this.pdfLoaded = false; // Set initial value
     pdfjsLib.GlobalWorkerOptions.workerSrc =
       '../../../assets/pdfjs/pdf.worker.js';
     const pdfUrl = '../../../assets/MartinSiles_SoftwareEngineer-1.pdf';
@@ -26,13 +28,16 @@ export class AboutComponent {
         this.canvas.height = viewport.height;
 
         // Render the PDF page on the canvas
-        page
-          .render({ canvasContext: this.canvas.getContext('2d'), viewport })
-          .promise.then(() => {
-            // Canvas rendered, no need to append it to the document body
-          });
+        page.render({ canvasContext: this.canvas.getContext('2d'), viewport }).promise.then(() => {
+          this.canvas.classList.add('complete');
+        });
       });
     });
+  }
+
+  closeCV() {
+    this.pdfShown = false;
+    this.pdfLoaded = false;
   }
 
   downloadCV() {
