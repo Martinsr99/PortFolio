@@ -268,18 +268,6 @@ code {
   border-radius: 0.2rem;
 }
 
-.text-uppercase {
-  letter-spacing: 0.08em;
-}
-
-.nav-item.dropdown.megamenu .dropdown-menu {
-  display: none;
-}
-
-.nav-item.dropdown.megamenu.show .dropdown-menu {
-  display: block;
-}
-
 .text {
   color: white;
   font-size: 36px;
