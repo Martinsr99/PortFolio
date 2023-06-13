@@ -11,6 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactService } from './services/contact.service';
 import { AboutComponent } from './pages/about/about.component';
+import { WhoamiComponent } from './pages/whoami/whoami.component';
+import { VideoComponent } from './pages/video/video.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AboutComponent } from './pages/about/about.component';
     PagesComponent,
     MainComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    WhoamiComponent,
+    VideoComponent
 
   ],
   imports: [

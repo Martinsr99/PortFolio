@@ -1,0 +1,37 @@
+    <!--It creates the transparent black overlay over the video -->
+    <div class="overlay" *ngIf="cardShown">
+        <div class="container">
+            <div class="card card0">
+                <div class="border">
+                    <h2>Martin Siles</h2>
+                    <button type="button" (click)="disableCard()"
+                        class="card-button btn waves-effect waves-light btn-rounded btn-outline-secondary">Let's
+                        go</button>
+                    <div class="icons">
+                        <a href="https://www.youtube.com/channel/UCAE-h6LasCo18dJymGM5eKg"><i
+                                class="fa-brands fa-youtube" style="color: #ffffff;"></i></a>
+                        <a href="https://www.instagram.com/siles99/"><i class="fa-brands fa-instagram"
+                                style="color: #ffffff;"></i></a>
+                        <a href="https://www.linkedin.com/in/martinsilesreche588bba177/"><i
+                                class="fa-brands fa-linkedin" style="color: #ffffff;"></i></a>
+                        <a href="https://github.com/Martinsr99"><i class="fa-brands fa-github"
+                                style="color: #ffffff;"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text" *ngIf="!cardShown">
+        <a href="https://www.youtube.com/channel/UCAE-h6LasCo18dJymGM5eKg"><i class="fa-brands fa-youtube"
+                style="color: #ffffff;">YouTube</i></a>
+    </div>
+
+    <!-- The HTML5 video element that will create the background video on the header -->
+
+    <div class="container">
+        <div class="video-wrapper">
+            <iframe class="video" id="video" src="https://www.youtube.com/embed/y6MNk25ANMM?autoplay=1&mute=1"
+                title="YouTube video player" frameborder="0" allow="web-share" allowfullscreen></iframe>
+        </div>
+    </div>
