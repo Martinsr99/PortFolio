@@ -304,7 +304,7 @@ h2 {
 */
 
 body {
-  background: url("./assets/back.png");
+  background: url("./assets/backMountain.png");
   min-height: 100vh;
 }
 
@@ -471,4 +471,8 @@ margin-bottom: 20px;
 
 .white-text {
   color: white;
+}
+
+.navbar-nav a.nav-link:hover {
+  color: rgb(222, 189, 66);
 }
