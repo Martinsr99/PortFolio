@@ -475,3 +475,30 @@ margin-bottom: 20px;
 .navbar-nav a.nav-link:hover {
   color: rgb(222, 189, 66);
 }
+
+
+.column {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gif-title {
+  text-align: center;
+}
+
+
+.container-whoami {
+  height: 100vh;
+  width: 100vw;
+  min-height: 600px;
+  min-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: url("./assets/blackBack.png");
+}

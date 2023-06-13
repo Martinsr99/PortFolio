@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
 })
 export class WhoamiComponent {
 
+  public language: string = 'spanish';
+
+  toggleLanguage(language:string){
+    this.language = language
+    
+  }
 }

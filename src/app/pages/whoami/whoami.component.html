@@ -1,1 +1,35 @@
-<p>whoami works!</p>
+<div class="container-whoami">
+    <div class="column">
+        <video src="../../../assets/whoami.mp4" width="480" autoplay loop></video>
+    </div>
+    <div class="column">
+        <div id="text-container">
+            <p id="text-spanish" class="white-text" *ngIf="language==='spanish'">El motivo por el que estoy aquí es por la búsqueda de nuevos retos que puedan hacerme
+                dar todo de mí día a día. Creo que para ser el mejor en algo necesitas ser curioso y explorar cosas
+                nuevas, y en el ámbito tecnológico no es diferente. Desde pequeño creo haber destacado por mi constancia
+                y es algo que simplemente quería reflejar aquí. Empecé en el mundo IT por mi interés en ciberseguridad,
+                durante mis estudios conocí un mentor en este ámbito que me dio las directrices iniciales del camino a
+                seguir. Tenía mucha ilusión en cada reto que me encontraba pero lo cierto es que las bases que tenía en
+                cuanto a programación estaban limitando mi crecimiento. Por ello decidí formarme en otras tecnologías
+                hasta conseguir comprender al menos a grandes rasgos, el funcionamiento y estructura de la web. Todo
+                ello me abrió puertas laborales en el mundo del desarrollo de software y para sorpresa de nadie... me
+                acabó encantando hasta el punto de que esto sea el rincón donde almacenar y compartir mi camino hacia el
+                resto del mundo y conmigo mismo.</p>
+            <p id="text-english" class="white-text" *ngIf="language==='english'">The reason I am here is because I am constantly seeking new
+                challenges that push me to give my best every day. I believe that to excel in anything, you need to be
+                curious and explore new things, and the field of technology is no exception. Since I was young, I have
+                always stood out for my perseverance, and I wanted to reflect that here. I entered the IT world due to
+                my interest in cybersecurity. During my studies, I met a mentor in this field who provided me with the
+                initial guidelines for my path. I was very excited about every challenge I encountered, but the truth is
+                that my programming skills were limiting my growth. That's why I decided to learn other technologies
+                until I could grasp, at least in broad terms, the functioning and structure of the web. This opened up
+                job opportunities for me in the software development world, and to no one's surprise... I ended up
+                loving it to the point where this became the place to store and share my journey with the rest of the
+                world and with myself.</p>
+        </div>
+        <div id="button-container">
+            <button class="btn waves-effect waves-light btn-rounded btn-outline-secondary" style="margin: 10px;" (click)="toggleLanguage('spanish')" [disabled]="language==='spanish'">Spanish</button>
+            <button class="btn waves-effect waves-light btn-rounded btn-outline-secondary" (click)="toggleLanguage('english')" [disabled]="language==='english'">English</button>
+        </div>
+    </div>
+</div>
