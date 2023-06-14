@@ -502,3 +502,34 @@ margin-bottom: 20px;
   margin: 0 auto;
   background: url("./assets/blackBack.png");
 }
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  overflow: hidden;
+}
+
+.carousel-image {
+  width: 200px;
+  height: auto;
+  margin: 0 10px;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.carousel-image.center {
+  opacity: 1;
+}
+
+.carousel-button {
+  position: flex;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
