@@ -1,14 +1,29 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-technologies',
   templateUrl: './technologies.component.html',
 })
-export class TechnologiesComponent {
+export class TechnologiesComponent implements OnInit {
   @ViewChild('carouselContainer') carouselContainer: ElementRef;
+  selectedImageText: string; // Agrega esta línea para definir la propiedad selectedImageText
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.onClickImage(0);
+    });
+  }
+
+  imageTexts: string[] = [
+    'Texto de la imagen 1',
+    'Texto de la imagen 2',
+    'Texto de la imagen 3',
+    // Agrega los textos correspondientes para cada imagen
+  ];
 
   onClickImage(imageIndex: number): void {
     this.updateCarousel(imageIndex);
+    this.selectedImageText = this.imageTexts[imageIndex];
   }
   moveToPrevious(): void {
     const carouselImages = this.carouselContainer.nativeElement.querySelectorAll('.carousel-image');

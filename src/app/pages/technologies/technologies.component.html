@@ -1,19 +1,42 @@
 <div class="row">
   <div class="col-md-6">
-<div class="carousel-container" #carouselContainer>
-    <img src="../../../assets/logo/angular.png" class="carousel-image" (click)="onClickImage(0)">
-    <img src="../../../assets/logo/docker.png" class="carousel-image" (click)="onClickImage(1)">
-    <img src="../../../assets/logo/git.png" class="carousel-image" (click)="onClickImage(2)">
-    <img src="../../../assets/logo/googleCloud.png" class="carousel-image" (click)="onClickImage(3)">
-    <img src="../../../assets/logo/mongodb.png" class="carousel-image" (click)="onClickImage(4)">
-    <img src="../../../assets/logo/nodejs.png" class="carousel-image" (click)="onClickImage(5)">
-    <img src="../../../assets/logo/postgreSQL.png" class="carousel-image" (click)="onClickImage(6)">
-    <img src="../../../assets/logo/python.png" class="carousel-image" (click)="onClickImage(7)">
-    <img src="../../../assets/logo/typescript.png" class="carousel-image" (click)="onClickImage(8)">
-    <img src="../../../assets/logo/react.png" class="carousel-image" (click)="onClickImage(9)">
+    <div class="carousel-container" #carouselContainer>
+      <div class="row">
+        <div class="col-2">
+          <img src="../../../assets/logo/angular.png" class="carousel-image" (click)="onClickImage(0)">
+        </div>
+        <div class="col-2">
+          <img src="../../../assets/logo/docker.png" class="carousel-image" (click)="onClickImage(1)">
+        </div>
+        <div class="col-2">
+          <img src="../../../assets/logo/git.png" class="carousel-image" (click)="onClickImage(2)">
+        </div>
+        <div class="col-2">
+          <img src="../../../assets/logo/googleCloud.png" class="carousel-image" (click)="onClickImage(3)">
+        </div>
+        <div class="col-2">
+          <img src="../../../assets/logo/mongodb.png" class="carousel-image" (click)="onClickImage(4)">
+        </div>
+        <br>
+        <div class="col-2">
+          <img src="../../../assets/logo/nodejs.png" class="carousel-image" (click)="onClickImage(5)">
+        </div>
+        <div class="col-2">
+          <img src="../../../assets/logo/postgreSQL.png" class="carousel-image" (click)="onClickImage(6)">
+        </div>
+        <div class="col-2">
+          <img src="../../../assets/logo/python.png" class="carousel-image" (click)="onClickImage(7)">
+        </div>
+        <div class="col-2">
+          <img src="../../../assets/logo/typescript.png" class="carousel-image" (click)="onClickImage(8)">
+        </div>
+        <div class="col-2">
+          <img src="../../../assets/logo/react.png" class="carousel-image" (click)="onClickImage(9)">
+        </div>
+      </div>
+    </div>
   </div>
-  </div>  <div class="col-md-6">
-    <p class="white-text" style="align-items: center; display: flex; justify-content: center;">Test</p>
+  <div class="col-md-6">
+    <p class="white-text">{{ selectedImageText }}</p>
   </div>
 </div>
-  
