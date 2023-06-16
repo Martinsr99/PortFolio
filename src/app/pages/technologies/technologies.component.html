@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row container-fluid">
   <div class="col-md-6">
     <div class="carousel-container" #carouselContainer>
-      <div class="row">
+      <div class="row" style="justify-content:center">
         <div class="col-2">
           <img src="../../../assets/logo/angular.png" class="carousel-image" (click)="onClickImage(0)">
         </div>
@@ -17,7 +17,7 @@
         <div class="col-2">
           <img src="../../../assets/logo/mongodb.png" class="carousel-image" (click)="onClickImage(4)">
         </div>
-        <br>
+        <div class="w-100"></div>
         <div class="col-2">
           <img src="../../../assets/logo/nodejs.png" class="carousel-image" (click)="onClickImage(5)">
         </div>
@@ -37,6 +37,6 @@
     </div>
   </div>
   <div class="col-md-6">
-    <p class="white-text">{{ selectedImageText }}</p>
+        <p class="white-text">{{ selectedImageText }}</p>
   </div>
 </div>
