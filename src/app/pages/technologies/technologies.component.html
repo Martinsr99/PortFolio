@@ -36,7 +36,16 @@
       </div>
     </div>
   </div>
-  <div class="col-md-6">
-        <p class="white-text">{{ selectedImageText }}</p>
+  <div class="col-md-6 tech-text">
+    <div *ngIf="empty"
+      style="display: flex; justify-content: center; align-items: center; height: 100%; ">
+      <button class="btn waves-effect waves-light btn-rounded btn-outline-secondary"
+        style="margin: 10px;" (click)="showVersion()">Versions</button>
+      <button class="btn waves-effect waves-light btn-rounded btn-outline-secondary">Projects</button>
+    </div>
+    <ul class="white-text" *ngIf="showVersions">
+      <h3 style="text-align: center;" >Versions</h3>
+        <li>Test</li>
+    </ul>
   </div>
 </div>

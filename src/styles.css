@@ -554,3 +554,8 @@ margin-bottom: 20px;
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+.tech-text {
+  background: url("./assets/marco.png");
+
+}

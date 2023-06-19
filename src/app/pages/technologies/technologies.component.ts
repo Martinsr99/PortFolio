@@ -7,6 +7,8 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 export class TechnologiesComponent implements OnInit {
   @ViewChild('carouselContainer') carouselContainer: ElementRef;
   selectedImageText: string; // Agrega esta línea para definir la propiedad selectedImageText
+  public empty: boolean = true;
+  public showVersions: boolean = false;
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -65,6 +67,11 @@ export class TechnologiesComponent implements OnInit {
         image.classList.remove('center');
       }
     });
+  }
+
+  showVersion() {
+    this.showVersions = true
+    this.empty = false
   }
   
 }
