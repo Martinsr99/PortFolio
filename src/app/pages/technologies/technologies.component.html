@@ -36,20 +36,22 @@
       </div>
     </div>
   </div>
-  <div class="col-md-6 tech-text">
+  <div class="col-md-6 tech-text center">
     <div class="row">
-      <div class="col-md-6">
-        <ul class="white-text">
+      <div *ngIf="selectedImageTextVersion !== ''" class="col-md-6">
+        <div class="white-text text-center">
           <h3 style="text-align: center;">Versions</h3>
-          <li>{{selectedImageTextVersion}}</li>
-        </ul>
+          <br>
+          <p>{{ selectedImageTextVersion }}</p>
+        </div>
       </div>
-      <div class="col-md-6">
-        <ul class="white-text">
+      <div [ngClass]="selectedImageTextVersion === '' ? 'col-md-6 offset-md-3' : 'col-md-6'">
+        <div class="white-text">
           <h3 style="text-align: center;">Projects</h3>
-          <li>{{selectedImageTextProject}}</li>
-        </ul>
+          <br>
+          <p style="text-align: justify;">{{ selectedImageTextProject }}</p>
+        </div>
       </div>
     </div>
-  </div>
+  </div>  
 </div>

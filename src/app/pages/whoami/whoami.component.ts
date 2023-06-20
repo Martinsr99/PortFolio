@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-whoami',
@@ -8,8 +9,10 @@ export class WhoamiComponent {
 
   public language: string = 'spanish';
 
+  constructor(private languageService: LanguageService) {}
+
   toggleLanguage(language:string){
     this.language = language
-    
+    this.languageService.language = language;
   }
 }
