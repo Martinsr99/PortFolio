@@ -6,7 +6,8 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 })
 export class TechnologiesComponent implements OnInit {
   @ViewChild('carouselContainer') carouselContainer: ElementRef;
-  selectedImageText: string; // Agrega esta línea para definir la propiedad selectedImageText
+  public selectedImageTextVersion: string; // Agrega esta línea para definir la propiedad selectedImageTextVersion
+  public selectedImageTextProject: string; // Agrega esta línea para definir la propiedad selectedImageTextVersion
   public empty: boolean = true;
   public showVersions: boolean = false;
 
@@ -16,16 +17,21 @@ export class TechnologiesComponent implements OnInit {
     });
   }
 
-  imageTexts: string[] = [
+  imageTextsVersion: string[] = [
     'Texto de la imagen 1',
     'Texto de la imagen 2',
     'Texto de la imagen 3',
-    // Agrega los textos correspondientes para cada imagen
+  ];
+  imageTextsProject: string[] = [
+    'Texto de la imagen 1',
+    'Texto de la imagen 2',
+    'Texto de la imagen 3',
   ];
 
   onClickImage(imageIndex: number): void {
     this.updateCarousel(imageIndex);
-    this.selectedImageText = this.imageTexts[imageIndex];
+    this.selectedImageTextVersion = this.imageTextsVersion[imageIndex];
+    this.selectedImageTextProject = this.imageTextsProject[imageIndex];
   }
   moveToPrevious(): void {
     const carouselImages = this.carouselContainer.nativeElement.querySelectorAll('.carousel-image');
