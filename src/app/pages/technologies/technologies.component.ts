@@ -11,12 +11,13 @@ export class TechnologiesComponent implements OnInit {
   public selectedImageTextProject: string; // Agrega esta línea para definir la propiedad selectedImageTextVersion
   public empty: boolean = true;
   public showVersions: boolean = false;
+  public oldIndex:number = 0;
 
   constructor(private languageService: LanguageService) {}
 
   ngOnInit(): void {
     this.languageService.languageChange.subscribe(() => {
-      this.onClickImage(0);
+      this.onClickImage(this.oldIndex);
     });
     setTimeout(() => {
       this.onClickImage(0);
@@ -65,6 +66,7 @@ export class TechnologiesComponent implements OnInit {
   ];
 
   onClickImage(imageIndex: number): void {
+    this.oldIndex = imageIndex;
     this.updateCarousel(imageIndex);
     this.selectedImageTextVersion = this.imageTextsVersion[imageIndex];
     if(this.getLanguage()==='spanish'){
