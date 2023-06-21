@@ -14,5 +14,6 @@ export class WhoamiComponent {
   toggleLanguage(language:string){
     this.language = language
     this.languageService.language = language;
+    this.languageService.languageChange.emit();
   }
 }

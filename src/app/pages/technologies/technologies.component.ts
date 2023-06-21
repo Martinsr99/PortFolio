@@ -15,6 +15,9 @@ export class TechnologiesComponent implements OnInit {
   constructor(private languageService: LanguageService) {}
 
   ngOnInit(): void {
+    this.languageService.languageChange.subscribe(() => {
+      this.onClickImage(0);
+    });
     setTimeout(() => {
       this.onClickImage(0);
     });
