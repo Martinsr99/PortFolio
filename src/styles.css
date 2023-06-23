@@ -537,8 +537,7 @@ margin-bottom: 20px;
 }
 
 .container-fluid {
-  overflow-x: hidden;
-  width: 100%;
+  width: auto;
   min-height: 50vh;
 }
 
@@ -559,6 +558,12 @@ margin-bottom: 20px;
 
 .tech-text {
   background: url("./assets/marco.png");
+  background-size: cover;
+}
+
+.tech-text-2 {
+  background: url("./assets/marco2.png");
+  background-size: cover;
 }
 
 .center {

@@ -36,7 +36,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-6 tech-text center">
+  <div class="col-md-6" [ngClass]="selectedImageTextVersion !== '' ? 'tech-text-2' : 'tech-text'">
     <div class="row">
       <div *ngIf="selectedImageTextVersion !== ''" class="col-md-6">
         <div class="white-text text-center">
@@ -49,9 +49,10 @@
         <div class="white-text">
           <h3 style="text-align: center;">Projects</h3>
           <br>
-          <p style="text-align: justify;">{{ selectedImageTextProject }}</p>
+          <p style="text-align: justify; margin: 5%;">{{ selectedImageTextProject }}</p>
         </div>
       </div>
     </div>
-  </div>  
+  </div>
+  
 </div>
