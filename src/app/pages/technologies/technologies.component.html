@@ -1,5 +1,6 @@
 <div class="row container-fluid">
   <div class="col-md-6" style="background: url('../../../assets/blackBack.png');">
+    <h3 style="text-align: center; margin-top: 5%;" class="white-text">Stack</h3>
     <div class="carousel-container" #carouselContainer>
       <div class="row" style="justify-content:center">
         <div class="col-2">
@@ -36,23 +37,13 @@
       </div>
     </div>
   </div>
-  <div class="col-md-6" [ngClass]="selectedImageTextVersion !== '' ? 'tech-text-2' : 'tech-text'">
+  <div class="col-md-6 tech-text">
     <div class="row">
-      <div *ngIf="selectedImageTextVersion !== ''" class="col-md-6">
-        <div class="white-text text-center">
-          <h3 style="text-align: center;">Versions</h3>
-          <br>
-          <p>{{ selectedImageTextVersion }}</p>
-        </div>
-      </div>
-      <div [ngClass]="selectedImageTextVersion === '' ? 'col-md-6 offset-md-3' : 'col-md-6'">
-        <div class="white-text">
-          <h3 style="text-align: center;">Projects</h3>
-          <br>
-          <p style="text-align: justify; margin: 5%;">{{ selectedImageTextProject }}</p>
-        </div>
+      <div class="white-text">
+        <h3 style="text-align: center; margin-top: 5%;color: black;">Projects</h3>
+        <br>
+        <p style="text-align: justify; margin-left: 10%; margin-right:10%;margin-top: 4%;color:black">{{ selectedImageTextProject }}</p>
       </div>
     </div>
   </div>
-  
 </div>

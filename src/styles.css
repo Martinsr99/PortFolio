@@ -484,7 +484,8 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: auto;
+  margin-top: 5%;
 }
 
 .carousel-image {
@@ -537,10 +538,6 @@ code {
   background-size: cover;
 }
 
-.tech-text-2 {
-  background: url("./assets/marco2.png");
-  background-size: cover;
-}
 
 .center {
   top: 50%;
