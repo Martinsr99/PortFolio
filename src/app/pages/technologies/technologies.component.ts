@@ -10,7 +10,8 @@ export class TechnologiesComponent implements OnInit {
   public selectedImageTextProject: string;
   public empty: boolean = true;
   public showVersions: boolean = false;
-  public oldIndex: number = 0;
+  public oldIndex: number = 1;
+  public language: string = this.getLanguage()
   public isTextProjectChanged: boolean = false;
 
   constructor(private languageService: LanguageService) {}
@@ -56,18 +57,20 @@ export class TechnologiesComponent implements OnInit {
 
   //Function to swap texts when clicking on a different logo
   onClickImage(imageIndex: number): void {
+    if(this.oldIndex === imageIndex && this.language === this.getLanguage()) return 
     this.isTextProjectChanged = true;
+    // Delay resetting isTextProjectChanged to false to allow the animation to play
+    setTimeout(() => {
+      this.isTextProjectChanged = false;
+    }, 500); // Adjust the delay time as needed
     this.oldIndex = imageIndex;
+    this.language = this.getLanguage()
     this.updateCarousel(imageIndex);
     if (this.getLanguage() === 'spanish') {
       this.selectedImageTextProject = this.imageTextsProjectESP[imageIndex];
     } else {
       this.selectedImageTextProject = this.imageTextsProjectENG[imageIndex];
     }
-    // Delay resetting isTextProjectChanged to false to allow the animation to play
-    setTimeout(() => {
-      this.isTextProjectChanged = false;
-    }, 500); // Adjust the delay time as needed
   }
 
   //Function with the logic when clicking on a logo
