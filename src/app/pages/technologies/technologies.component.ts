@@ -24,22 +24,11 @@ export class TechnologiesComponent implements OnInit {
     });
   }
 
+  //Method to call language service and set texts dynamically
   public getLanguage(): string {
     return this.languageService.language;
   }
 
-  imageTextsVersion: string[] = [
-    'V.11 to V.16',
-    '',
-    '',
-    '',
-    '',
-    'Texto de la imagen 6',
-    '',
-    'Texto de la imagen 8',
-    'Texto de la imagen 9',
-    'Texto de la imagen 10',
-  ];
   imageTextsProjectESP: string[] = [
     'He trabajado en la creación de diferentes proyectos webs en ámbitos diversos, desde ONG como drinkable rivers, hasta el mundo de las teleoperadoras trabajando para orange en bélgica. Aunque es cierto que mi desarrollo laboral se centra en el backend, en la parte del front, angular ha sido la herramienta más utilizada y que he mantenido en continuo aprendizaje para proyectos personales pues me considero apasionado del diseño gráfico y la implementación de animaciones con css.',
     'Docker ha sido la herramienta por excelencia para el futuro despliegue de todas las aplicaciones creadas debido a su versatilidad. Mis funciones se resumen en la creación de contenedores, despliegue de imágenes y testeo en los diferentes sistemas',
@@ -65,52 +54,18 @@ export class TechnologiesComponent implements OnInit {
     'My experience in React development can be summarized in the front-end part, mainly through creating web applications using Redux as well as utilizing hooks and other characteristic tools of this framework. Overall, React has been an essential tool in my work for building modern and appealing web applications.',
   ];
 
+  //Function to swap texts when clicking on a different logo
   onClickImage(imageIndex: number): void {
     this.oldIndex = imageIndex;
     this.updateCarousel(imageIndex);
-    this.selectedImageTextVersion = this.imageTextsVersion[imageIndex];
     if(this.getLanguage()==='spanish'){
       this.selectedImageTextProject = this.imageTextsProjectESP[imageIndex];
     }else{
       this.selectedImageTextProject = this.imageTextsProjectENG[imageIndex];
     }
   }
-  moveToPrevious(): void {
-    const carouselImages =
-      this.carouselContainer.nativeElement.querySelectorAll('.carousel-image');
-    const centerImage = this.carouselContainer.nativeElement.querySelector(
-      '.carousel-image.center'
-    );
 
-    let currentIndex = Array.from(carouselImages).indexOf(centerImage);
-
-    if (currentIndex === 0) {
-      currentIndex = carouselImages.length - 1;
-    } else {
-      currentIndex--;
-    }
-
-    this.updateCarousel(currentIndex);
-  }
-
-  moveToNext(): void {
-    const carouselImages =
-      this.carouselContainer.nativeElement.querySelectorAll('.carousel-image');
-    const centerImage = this.carouselContainer.nativeElement.querySelector(
-      '.carousel-image.center'
-    );
-
-    let currentIndex = Array.from(carouselImages).indexOf(centerImage);
-
-    if (currentIndex === carouselImages.length - 1) {
-      currentIndex = 0;
-    } else {
-      currentIndex++;
-    }
-
-    this.updateCarousel(currentIndex);
-  }
-
+  //Function with the logic when clicking on a logo
   updateCarousel(centerIndex: number): void {
     const carouselImages =
       this.carouselContainer.nativeElement.querySelectorAll('.carousel-image');
@@ -122,10 +77,5 @@ export class TechnologiesComponent implements OnInit {
         image.classList.remove('center');
       }
     });
-  }
-
-  showVersion() {
-    this.showVersions = true;
-    this.empty = false;
   }
 }

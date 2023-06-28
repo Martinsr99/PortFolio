@@ -6,9 +6,10 @@ import * as pdfjsLib from 'pdfjs-dist';
 })
 export class AboutComponent {
   public pdfShown: boolean = false;
-    public pdfLoaded: boolean = false;
+  public pdfLoaded: boolean = false;
   private canvas: HTMLCanvasElement;
 
+  //Function to display CV
   viewCV() {
     this.pdfShown = true;
     this.pdfLoaded = true; // Set initial value
@@ -28,23 +29,28 @@ export class AboutComponent {
         this.canvas.height = viewport.height;
 
         // Render the PDF page on the canvas
-        page.render({ canvasContext: this.canvas.getContext('2d'), viewport }).promise.then(() => {
-          this.canvas.classList.add('complete');
-        });
+        page
+          .render({ canvasContext: this.canvas.getContext('2d'), viewport })
+          .promise.then(() => {
+            this.canvas.classList.add('complete');
+          });
       });
     });
   }
 
+  //Function to close CV
   closeCV() {
     this.pdfShown = false;
     this.pdfLoaded = false;
   }
 
+  
+  //Function to download CV
   downloadCV() {
     // Logic to download the CV
-  const link = document.createElement('a');
-  link.href = '../../../assets/MartinSiles_SoftwareEngineer-1.pdf';
-  link.download = 'MartinSiles_SoftwareEngineer-1.pdf';
-  link.click();
+    const link = document.createElement('a');
+    link.href = '../../../assets/MartinSiles_SoftwareEngineer-1.pdf';
+    link.download = 'MartinSiles_SoftwareEngineer-1.pdf';
+    link.click();
   }
 }

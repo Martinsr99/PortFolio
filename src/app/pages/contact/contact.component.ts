@@ -26,10 +26,14 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  onSubmit(contactForm) {
+  // Function to send the form
+  onSubmit(contactForm:FormGroup) {
+
     const nameControl = this.contactForm.get('name');
     const emailControl = this.contactForm.get('email');
     const bodyControl = this.contactForm.get('body');
+
+    //Check form valid and manage errors
     if (nameControl.invalid) {
       Swal.fire('Error','Name is invalid','error')
     }
@@ -40,7 +44,6 @@ export class ContactComponent implements OnInit {
       Swal.fire('Error','Body is invalid','error')
     }
     if(this.contactForm.valid){
-
       this.contactService.SendEmail(contactForm).subscribe((resp) => {
         console.log(resp);
       });

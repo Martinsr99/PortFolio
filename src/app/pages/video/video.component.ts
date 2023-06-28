@@ -11,14 +11,17 @@ export class VideoComponent implements OnInit {
   @HostBinding('class.disable-scroll-y')
   get disableScrollYClass() {
     return this.cardShown ? 'disable-scroll' : '';
-  }
+  } 
 
+  //Disable card function
   disableCard() {
     this.cardShown = false;
     this.resizeDiv();
+    //Enable scrolling when card is hidden
     document.body.classList.add('enable-scrollbar');
   }
 
+  //Function to resize video when card is hidden
   resizeDiv() {
     const videoElement = document.getElementById('video');
     if (videoElement) {
@@ -37,6 +40,7 @@ export class VideoComponent implements OnInit {
     }
   }
 
+  //Disable scrolling on init 
   ngOnInit() {
     document.body.classList.add('disable-scrollbar');
   }
