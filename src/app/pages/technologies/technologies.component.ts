@@ -1,11 +1,12 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-technologies',
   templateUrl: './technologies.component.html',
 })
-export class TechnologiesComponent implements OnInit {
+export class TechnologiesComponent implements OnInit,OnDestroy {
   @ViewChild('carouselContainer') carouselContainer: ElementRef;
   public selectedImageTextProject: string;
   public empty: boolean = true;
@@ -13,16 +14,21 @@ export class TechnologiesComponent implements OnInit {
   public oldIndex: number = 1;
   public language: string = this.getLanguage()
   public isTextProjectChanged: boolean = false;
+  public sub: Subscription;
 
   constructor(private languageService: LanguageService) {}
 
   ngOnInit(): void {
-    this.languageService.languageChange.subscribe(() => {
+    this.sub = this.languageService.languageChange.subscribe(() => {
       this.onClickImage(this.oldIndex);
     });
     setTimeout(() => {
       this.onClickImage(0);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe()
   }
 
   //Method to call language service and set texts dynamically

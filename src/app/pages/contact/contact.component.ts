@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import { ContactService } from 'src/app/services/contact.service';
 
 import Swal from 'sweetalert2';
@@ -7,11 +8,12 @@ import Swal from 'sweetalert2';
   selector: 'app-contact',
   templateUrl: './contact.component.html',
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit,OnDestroy {
   public contactForm: FormGroup;
   public name: string;
   public email: string;
   public body: string;
+  public sub: Subscription;
 
   constructor(
     private fb: FormBuilder,
@@ -24,6 +26,10 @@ export class ContactComponent implements OnInit {
       email: [this.email, [Validators.required, Validators.email]],
       body: [this.body, Validators.required],
     });
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe()
   }
 
   // Function to send the form
@@ -44,8 +50,7 @@ export class ContactComponent implements OnInit {
       Swal.fire('Error','Body is invalid','error')
     }
     if(this.contactForm.valid){
-      this.contactService.SendEmail(contactForm).subscribe((resp) => {
-        console.log(resp);
+      this.sub = this.contactService.SendEmail(contactForm).subscribe((resp) => {
       });
     }
   }
