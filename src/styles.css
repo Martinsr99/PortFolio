@@ -514,11 +514,6 @@ code {
   z-index: 1;
 }
 
-.container-fluid {
-  width: auto;
-  min-height: 50vh;
-}
-
 .background-image-container {
   background-image: url("./assets/marco.png");
   background-size: cover;
